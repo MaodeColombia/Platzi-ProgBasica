@@ -2,10 +2,16 @@ var aux = document.getElementById("lienzo_html");
 var lienzo_JS = aux.getContext("2d");
 console.log(lienzo_JS);
 console.log(aux);
-// NOTE: lo cacarcteristico de las siguiente 6 lineas es que desdpues de -iniciar linea -ir al lugar inicial -desplazarce a lugar final y -terminar la linea es que (depues de hace todo el trayecto) es cuando se le da color
-lienzo_JS.beginPath();
-lienzo_JS.moveTo(100,100);
-lienzo_JS.lineTo(200,200);
-lienzo_JS.closePath();
-lienzo_JS.strokeStyle="blue";
-lienzo_JS.stroke();
+dibujarLinea("red",200,200,200,100);
+
+
+// NOTE: la funcion puede ir en "cualquier" lugar ya que JS -lee todo el código pone las funiones en la memoria y luego empieza a poner todo los que este fuera de la memoria.
+function dibujarLinea(color,xinicial,yinicial,xfinal,yfinal)
+{
+  lienzo_JS.beginPath();
+  lienzo_JS.moveTo(xinicial,yinicial);
+  lienzo_JS.lineTo(xfinal,yfinal);
+  lienzo_JS.closePath();
+  lienzo_JS.strokeStyle=color;
+  lienzo_JS.stroke();
+}
