@@ -2,10 +2,18 @@ var aux = document.getElementById("lienzo_html");
 var lienzo_JS = aux.getContext("2d");
 console.log(lienzo_JS);
 console.log(aux);
-dibujarLinea("red",200,200,200,100);
 
+var pixeles_canvas = 300; //los pixeles que hay en el pixeles_canvas
+var densidad = 5;//las lineas que quiero
+var dxdy = pixeles_canvas/densidad; //cantidad de pixeles que distancian una linea y la siguiente
 
-// NOTE: la funcion puede ir en "cualquier" lugar ya que JS -lee todo el código pone las funiones en la memoria y luego empieza a poner todo los que este fuera de la memoria.
+var aux1 = 0;
+while (dxdy*aux1<pixeles_canvas)
+{
+  dibujarLinea("red",0,dxdy*aux1,dxdy*(aux1+1),300);
+  aux1++;
+}
+
 function dibujarLinea(color,xinicial,yinicial,xfinal,yfinal)
 {
   lienzo_JS.beginPath();
