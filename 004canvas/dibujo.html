@@ -4,14 +4,17 @@
     <meta charset="utf-8">
     <title>Dibujando con CANVAS</title>
     <style media="screen">
-      canvas
-      {
-        background-color: #FFFFDD;
-      }
+      canvas{background-color: #FFFEEE;}
+      body{background-color: white;color: grey;}
     </style>
   </head>
   <body>
     <h1>Dibujo del CANVAS</h1>
+    <!-- NOTE: <p> es un salto de linea doble, <br> es un salto de linea sencillo-->
+    <p>¿Con cuántas lineas quiere la figura?
+      <input type="text" id="input_line">
+      <input type="button" value="generar figura!">
+    </p>
     <!--NOTE: la etiqueta <canvas> solo requiere de la definicion de tres atributos -->
     <canvas id="lienzo_html" width="300" height="300"></canvas>
     <!--NOTE: A manera didactica ponemos otro titulo para hacer una idea del tamaño del CANVAS.-->
