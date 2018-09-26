@@ -1,7 +1,9 @@
 var aux = document.getElementById("lienzo_html");
 var lienzo_JS = aux.getContext("2d");
-console.log(lienzo_JS);
-console.log(aux);
+var user_input_js = document.getElementById('user_input_html');
+var boton_js = document.getElementById('boton_html');
+boton_html.addEventListener("click",dibujoPorClick);
+console.log(user_input_html);
 
 var pixeles_canvas = 300; //los pixeles que hay en el pixeles_canvas
 var densidad = 50;//las lineas que quiero
@@ -17,3 +19,4 @@ function dibujarLinea(color,xinicial,yinicial,xfinal,yfinal){
   lienzo_JS.closePath();
   lienzo_JS.strokeStyle=color;
   lienzo_JS.stroke();}
+function dibujoPorClick(){alert(user_input_js.value);}
