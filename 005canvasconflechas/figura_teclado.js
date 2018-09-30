@@ -6,6 +6,7 @@ var x_actual = 150;
 var y_actual = 150;
 function dibujarLinea(color,xinicial,yinicial,xfinal,yfinal){
   lienzo_2D.beginPath();
+  lienzo_2D.lineWidth = 3;
   lienzo_2D.moveTo(xinicial,yinicial);
   lienzo_2D.lineTo(xfinal,yfinal);
   lienzo_2D.closePath();
@@ -17,25 +18,27 @@ var teclas = {LEFT:37,UP:38,RIGHT:39,DOWN:40};
 document.addEventListener("keydown", eventoTeclado);
 // NOTE: cuando se está definiendo el nombre de una funcion, una buena práctica es colocar letras mayusculas cuando hay nuevas palabras
 function eventoTeclado(objeto_evento){
+  var color = "white";
+  var movimiento = 10;
   switch (objeto_evento.keyCode) {
     case teclas.LEFT:
-      dibujarLinea ("black",x_actual,y_actual,x_actual-5,y_actual);
-      x_actual=x_actual-5;
+      dibujarLinea (color,x_actual,y_actual,x_actual-movimiento,y_actual);
+      x_actual=x_actual-movimiento;
       console.log("iz");
       break;
     case teclas.UP:
-    dibujarLinea ("black",x_actual,y_actual,x_actual,y_actual-5);
-    y_actual = y_actual-5;
+    dibujarLinea (color,x_actual,y_actual,x_actual,y_actual-movimiento);
+    y_actual = y_actual-movimiento;
       console.log("ar");
       break;
     case teclas.RIGHT:
-    dibujarLinea ("black",x_actual,y_actual,x_actual+5,y_actual);
-    x_actual=x_actual+5;
+    dibujarLinea (color,x_actual,y_actual,x_actual+movimiento,y_actual);
+    x_actual=x_actual+movimiento;
       console.log("dr");
       break;
     case teclas.DOWN:
-    dibujarLinea ("black",x_actual,y_actual,x_actual,y_actual+5);
-    y_actual = y_actual+5;
+    dibujarLinea (color,x_actual,y_actual,x_actual,y_actual+movimiento);
+    y_actual = y_actual+movimiento;
       console.log("ab");
       break;
     default:
