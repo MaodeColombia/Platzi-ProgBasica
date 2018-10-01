@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>El peso en sistema solar</title>
+  </head>
+  <body>
+    <h1>Mi peso en otro planeta</h1>
+    <p>Según lo que dicen los fisicos en la tierra pesamos un poco mas que en la luna y que en marte </p>
+    <script>
+      var interaccion=prompt("Cual es tu peso?");
+      interaccion =parseInt(interaccion);
+      var g_tierra=9.8;
+      var g_marte= 3.7;
+      var g_jupiter=24.8;
+      var peso_mmo=interaccion;
+      var peso_final;
+      peso_final=peso_mmo*g_marte/g_tierra;
+      peso_final=parseInt(peso_final);
+      document.write("según las variables internas mi peso en marte es "+peso_final+ "<strong> kg.</strong>");
+    </script>
+  </body>
+</html>
