@@ -1,19 +1,39 @@
 document.write("<br>La vaca hace 'mmmm' <br>");
-var canvas_js=document.getElementById("canvas_html");
-var lienzo=canvas_js.getContext("2d");
+var canvas_js = document.getElementById("canvas_html");
+var lienzo = canvas_js.getContext("2d");
 
-var image_name = "tile.png";
-// NOTE: construtor del objeto Image()
-var imagen = new Image();
+// NOTE: construtor del objeto Image() (invocamos el objeto Image() para instanciar imagen, creando el objeto imagen)
+var fondo = new Image();
 // NOTE: se asigna el nombre de la imagen a la propiedad .src del objeto Imagen
-imagen.src = image_name;
-console.log(imagen);
+fondo.src = "tile.png";
+console.log(fondo);
 // NOTE: se "aplica" la función "load" a la imagen que se quiere cargar con "imagen"
-imagen.addEventListener("load", dibujar);
-// NOTE: y una vez que se de y se complete el evento "load" se "imprime" en el canvas
-function dibujar(objeto) {
+fondo.addEventListener("load", mostrar);
+// NOTE: y una vez que se de y se complete el evento "load" se "muestra" en el canvas
+function mostrar(objeto) {
   //console.log(objeto);
-  lienzo.drawImage(imagen,0,0);}
+  lienzo.drawImage(fondo,0,0);}
+
+
+var vaca = new Image();
+vaca.src = "vaca.png"
+vaca.addEventListener("load",mostrarVaca);
+function mostrarVaca(){lienzo.drawImage(vaca,10,10);}
+
+var cerdo = new Image();
+cerdo.src = "cerdo.png";
+cerdo.addEventListener("load", mostrarCerdo);
+function mostrarCerdo (){lienzo.drawImage(cerdo,20,20);}
+
+var pollo = new Image();
+pollo.src = "pollo.png";
+pollo.addEventListener("load", mostrarPollo);
+function mostrarPollo() { lienzo.drawImage(pollo,30,30);}
+
+
+
+
+
 
 
 // NOTE: número aleatorio en un intervalo, para este caso está predefinido entre 10 y 20
