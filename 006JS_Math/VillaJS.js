@@ -2,34 +2,41 @@ document.write("<br>La vaca hace 'mmmm' <br>");
 var canvas_js = document.getElementById("canvas_html");
 var lienzo = canvas_js.getContext("2d");
 
-// NOTE: construtor del objeto Image() (invocamos el objeto Image() para instanciar imagen, creando el objeto imagen)
-var fondo = new Image();
-// NOTE: se asigna el nombre de la imagen a la propiedad .src del objeto Imagen
-fondo.src = "tile.png";
-console.log(fondo);
-// NOTE: se "aplica" la función "load" a la imagen que se quiere cargar con "imagen"
-fondo.addEventListener("load", mostrar);
-// NOTE: y una vez que se de y se complete el evento "load" se "muestra" en el canvas
-function mostrar(objeto) {
+// NOTE: objeto con la sintaxis de JSON
+// NOTE: el JS no hay forma que agregar un objeto a una definicion de JSON (se requiere agregar el objeto "new Image();" )
+// NOTE: como este es un objeto que estoy creando, yo lo llamaría "mi (OWN) super-objeto"
+var objetoimagenOWN_fondo = {
+  url:"tile.png",
+  cargaOk:false};
+// NOTE: como no se puede agregar un objeto a una definicion JSON, se relaciona así como está a continuación en la linea de código, que es equivalente a  "var objetoimagenOWN_fondo = {url:"tile.png",cargaOk:false, objetimagen: new Image()};"
+objetoimagenOWN_fondo.objetoimagenJS = new Image();
+objetoimagenOWN_fondo.objetoimagenJS.src = objetoimagenOWN_fondo.url;
+//console.log(fondo);
+objetoimagenOWN_fondo.objetoimagenJS.addEventListener("load", mostrarFondo);
+function mostrarFondo(objeto) {
   //console.log(objeto);
-  lienzo.drawImage(fondo,0,0);}
+  objetoimagenOWN_fondo.cargaOk = true;
+  lienzo.drawImage(objetoimagenOWN_fondo.objetoimagenJS,0,0);}
 
 
-var vaca = new Image();
-vaca.src = "vaca.png"
-vaca.addEventListener("load",mostrarVaca);
-function mostrarVaca(){lienzo.drawImage(vaca,10,10);}
 
-var cerdo = new Image();
-cerdo.src = "cerdo.png";
-cerdo.addEventListener("load", mostrarCerdo);
-function mostrarCerdo (){lienzo.drawImage(cerdo,20,20);}
+var objetoimagenOWN_vaca = {url:"vaca.png",cargaOk:false};
+objetoimagenOWN_vaca.objetoimagenJS = new Image();
+objetoimagenOWN_vaca.objetoimagenJS.src = objetoimagenOWN_vaca.url;
+objetoimagenOWN_vaca.objetoimagenJS.addEventListener("load",mostrarVaca);
+function mostrarVaca(){lienzo.drawImage(objetoimagenOWN_vaca.objetoimagenJS,10,10);}
 
-var pollo = new Image();
-pollo.src = "pollo.png";
-pollo.addEventListener("load", mostrarPollo);
-function mostrarPollo() { lienzo.drawImage(pollo,30,30);}
+var objetoimagenOWN_cerdo = {url:"cerdo.png", cargaOk:false};
+objetoimagenOWN_cerdo.objetoimagenJS = new Image();
+objetoimagenOWN_cerdo.objetoimagenJS.src = objetoimagenOWN_cerdo.url;
+objetoimagenOWN_cerdo.objetoimagenJS.addEventListener("load",mostrarCerdo);
+function mostrarCerdo(){lienzo.drawImage(objetoimagenOWN_cerdo.objetoimagenJS,20,20);}
 
+var objetoimagenOWN_pollo = {url:"pollo.png",cargaOk:false};
+objetoimagenOWN_pollo.objetoimagenJS = new Image();
+objetoimagenOWN_pollo.objetoimagenJS.src = objetoimagenOWN_pollo.url
+objetoimagenOWN_pollo.objetoimagenJS.addEventListener("load",mostrarPollo);
+function mostrarPollo (){lienzo.drawImage(objetoimagenOWN_pollo.objetoimagenJS,30,30);}
 
 
 

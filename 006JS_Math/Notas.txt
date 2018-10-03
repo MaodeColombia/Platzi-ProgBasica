@@ -1,0 +1,6 @@
+las funciones matemáticas de js vienen de un gran objeto -Math-
+
+es una clase estática u objeto math es una colección de funciones
+math.ceil
+math.floor
+math.random();
