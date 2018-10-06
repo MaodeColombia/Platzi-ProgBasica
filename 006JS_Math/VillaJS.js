@@ -9,7 +9,6 @@ var objetoimagenOWN_fondo = {url:"tile.png",cargaOk:false};
 // NOTE: como no se puede agregar un objeto a una definicion JSON, se relaciona así como está a continuación en la linea de código, que es equivalente a  "var objetoimagenOWN_fondo = {url:"tile.png",cargaOk:false, objetimagen: new Image()};"
 objetoimagenOWN_fondo.objetoimagenJS = new Image();
 objetoimagenOWN_fondo.objetoimagenJS.src = objetoimagenOWN_fondo.url;
-//console.log(fondo);
 objetoimagenOWN_fondo.objetoimagenJS.addEventListener("load", mostrarFondo);
 
 var objetoimagenOWN_vaca = {url:"vaca.png",cargaOk:false};
@@ -30,37 +29,55 @@ objetoimagenOWN_pollo.objetoimagenJS.addEventListener("load",mostrarPollo);
 
 function mostrarFondo() {
   objetoimagenOWN_fondo.cargaOk = true;
-  mostrarVilla()}
+  mostrarVilla();
+  objetoimagenOWN_fondo.cargaOk = false;}
 
 function mostrarVaca() {
   objetoimagenOWN_vaca.cargaOk = true;
-  mostrarVilla()}
+  mostrarVilla();
+  objetoimagenOWN_vaca.cargaOk = false;}
 
 function mostrarCerdo() {
   objetoimagenOWN_cerdo.cargaOk = true;
-  mostrarVilla()}
+  mostrarVilla();
+  objetoimagenOWN_cerdo.cargaOk = false;}
 
 function mostrarPollo() {
   objetoimagenOWN_pollo.cargaOk = true;
-  mostrarVilla()}
+  mostrarVilla();
+  objetoimagenOWN_pollo.cargaOk = false;}
 
 
 function mostrarVilla() {
   if (objetoimagenOWN_fondo.cargaOk) {
-    lienzo.drawImage(objetoimagenOWN_fondo.objetoimagenJS,0,0);}
+    lienzo.drawImage(objetoimagenOWN_fondo.objetoimagenJS,0,0);
+  objetoimagenOWN_fondo.cargaOk=false;}
   if (objetoimagenOWN_vaca.cargaOk) {
-    lienzo.drawImage(objetoimagenOWN_vaca.objetoimagenJS,10,10);}
+    var max_num_animales =  parseInt(500/80); // como es cuadrada la imagen de fondo la cantidad de animales que caben es la misma
+    var num_animales = aleatorio(0,36); // si el max_num_animales en x o en y entonces el maximo numero de animales en el tablero es 6*6
+    console.log(num_animales + " vacas");
+    for (var i = 0; i < num_animales; i++) {
+      x = aleatorio(0,max_num_animales)*70;//6*70=420
+      y = aleatorio(0,max_num_animales)*70;
+      lienzo.drawImage(objetoimagenOWN_vaca.objetoimagenJS,x,y);
+    console.log("1");}}
+  console.log("3");
   if (objetoimagenOWN_cerdo.cargaOk) {
     lienzo.drawImage(objetoimagenOWN_cerdo.objetoimagenJS,20,20)}
   if (objetoimagenOWN_pollo.cargaOk) {
     lienzo.drawImage(objetoimagenOWN_pollo.objetoimagenJS,30.,30)}}
 
+// NOTE: entre 0 y 420
+function cantidadAleatoria() {
 
+
+}
 
 // NOTE: número aleatorio en un intervalo, para este caso está predefinido entre 10 y 20
-function aleatorio(mini=10,maxim=20) {
+function aleatorio(mini=0,maxim=420) {
   z = Math.floor(Math.random()*((maxim-mini)+1))+mini
   return z;}
+document.write (aleatorio());
 
 lienzo.beginPath();
 lienzo.lineWidth=10;
