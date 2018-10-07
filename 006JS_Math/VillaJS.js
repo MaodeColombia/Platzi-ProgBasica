@@ -5,8 +5,8 @@ var lienzo = canvas_js.getContext("2d");
 // NOTE: objeto con la sintaxis de JSON
 // NOTE: el JS no hay forma que agregar un objeto a una definicion de JSON (se requiere agregar el objeto "new Image();" )
 // NOTE: como este es un objeto que estoy creando, yo lo llamaría "mi (OWN) super-objeto"
-var objetoimagenOWN_fondo = {url:"tile.png",cargaOk:false};
-// NOTE: como no se puede agregar un objeto a una definicion JSON, se relaciona así como está a continuación en la linea de código, que es equivalente a  "var objetoimagenOWN_fondo = {url:"tile.png",cargaOk:false, objetimagen: new Image()};"
+var objetoimagenOWN_fondo = {url:"as.jpg",cargaOk:false};
+// NOTE: como no se puede agregar un objeto a una definicion JSON, se relaciona así como está a continuación en la linea de código, que es equivalente a  "var objetoimagenOWN_fondo = {url:"as.jpg",cargaOk:false, objetimagen: new Image()};"
 objetoimagenOWN_fondo.objetoimagenJS = new Image();
 objetoimagenOWN_fondo.objetoimagenJS.src = objetoimagenOWN_fondo.url;
 objetoimagenOWN_fondo.objetoimagenJS.addEventListener("load", mostrarFondo);
@@ -50,15 +50,14 @@ function mostrarPollo() {
 
 function mostrarVilla() {
   if (objetoimagenOWN_fondo.cargaOk) {
-    lienzo.drawImage(objetoimagenOWN_fondo.objetoimagenJS,0,0);
-  objetoimagenOWN_fondo.cargaOk=false;}
+    lienzo.drawImage(objetoimagenOWN_fondo.objetoimagenJS,0,0);}
   if (objetoimagenOWN_vaca.cargaOk) {
-    var max_num_animales =  parseInt(500/80); // como es cuadrada la imagen de fondo la cantidad de animales que caben es la misma
-    var num_animales = aleatorio(0,36); // si el max_num_animales en x o en y entonces el maximo numero de animales en el tablero es 6*6
+    var max_num_animalesXoY =  parseInt(500/80); // como es cuadrada la imagen de fondo la cantidad de animales que caben es la misma
+    var num_animales = aleatorio(0,36); // si el max_num_animalesXoY en x o en y entonces el maximo numero de animales en el tablero es 6*6
     console.log(num_animales + " vacas");
     for (var i = 0; i < num_animales; i++) {
-      x = aleatorio(0,max_num_animales)*70;//6*70=420
-      y = aleatorio(0,max_num_animales)*70;
+      x = aleatorio(0,max_num_animalesXoY)*70;//6*70=420
+      y = aleatorio(0,max_num_animalesXoY)*70;
       lienzo.drawImage(objetoimagenOWN_vaca.objetoimagenJS,x,y);
     console.log("1");}}
   console.log("3");
