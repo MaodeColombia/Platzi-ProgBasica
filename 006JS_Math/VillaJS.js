@@ -30,25 +30,36 @@ objetoimagenOWN_pollo.objetoimagenJS.addEventListener("load",mostrarPollo);
 
 function mostrarFondo() {
   objetoimagenOWN_fondo.cargaOk = true;
-  mostrarVilla()}
+  mostrarVilla();
+  objetoimagenOWN_fondo.cargaOk = false;}
 
 function mostrarVaca() {
   objetoimagenOWN_vaca.cargaOk = true;
-  mostrarVilla()}
+  mostrarVilla();
+  objetoimagenOWN_vaca.cargaOk = false;}
 
 function mostrarCerdo() {
   objetoimagenOWN_cerdo.cargaOk = true;
-  mostrarVilla()}
+  mostrarVilla();
+  objetoimagenOWN_cerdo.cargaOk = false;}
 
 function mostrarPollo() {
   objetoimagenOWN_pollo.cargaOk = true;
-  mostrarVilla()}
+  mostrarVilla();
+  objetoimagenOWN_pollo.cargaOk = false;}
 
 
-function mostrarVilla() {
+function mostrarVilla() {  
   if (objetoimagenOWN_fondo.cargaOk) {
     lienzo.drawImage(objetoimagenOWN_fondo.objetoimagenJS,0,0);}
   if (objetoimagenOWN_vaca.cargaOk) {
+    var num_max_animales_XoY = parseInt(500/80);// 500 es tanto el ancho del canvas como del fondo ("tile.png") y 80 es el ancho del la imagen vaca ("vaca.png"), el resultado de esta mimagen es el MAXimo_NUMero_animales que caben verticalmente u horizontalmente.
+    var num_max_animales_canvas = (0,36);// como el canvas es cuadrado, el mámimo numero de vacas cerdos o pollo en el tableron son 36 (esto es 6x6)
+    for (var i = 0; i < num_max_animales_canvas; i++) {
+      x = aleatorio(0,num_max_animales_XoY)*70;//6*70=420
+      y = aleatorio(0,num_max_animales_XoY)*70;
+      lienzo.drawImage(objetoimagenOWN_vaca.objetoimagenJS,x,y);}
+
     lienzo.drawImage(objetoimagenOWN_vaca.objetoimagenJS,10,10);}
   if (objetoimagenOWN_cerdo.cargaOk) {
     lienzo.drawImage(objetoimagenOWN_cerdo.objetoimagenJS,20,20)}
