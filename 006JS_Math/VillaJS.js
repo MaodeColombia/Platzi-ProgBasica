@@ -48,24 +48,38 @@ function mostrarPollo() {
   mostrarVilla();
   objetoimagenOWN_pollo.cargaOk = false;}
 
+  var num_max_animales_XoY = parseInt(canvas_js.width/80);// canvas_js.width es tanto el ancho del canvas y del tamaño del fondo ("tile.png") y 80 es el ancho del la imagen vaca ("vaca.png"), el resultado de esta mimagen es el MAXimo_NUMero_animales que caben verticalmente u horizontalmente.
+  var num_max_animales_canvas = (0,36);// como el canvas es cuadrado, el mámimo numero de vacas cerdos o pollo en el tableron son 36 (esto es 6x6)
+
+// NOTE:"a lanzar los dados" para determinar el porcentaje de animales de cada especie que van a aparecer"
+var xvacas = aleatorio(0,10);//lo puse de cero a "cualquier valor" o sea 10
+var xcerdos = aleatorio(0,10);
+var xpollos = aleatorio(0,10);
+var aux_porcentaje = (xvacas+xcerdos+xpollos);
+
+var porcentaje_vacas = Math.round(xvacas/aux_porcentaje*100);
+var porcentaje_cerdos = Math.round(xcerdos/aux_porcentaje*100);
+var porcentaje_pollos = Math.round(xpollos/aux_porcentaje*100);
+
+var num_vacas = Math.round(porcentaje_vacas*36/100);
+var num_cerdos = Math.round(porcentaje_cerdos*36/100);
+var num_pollos = Math.round(porcentaje_pollos*36/100);
 
 function mostrarVilla() {
-  var num_max_animales_XoY = parseInt(500/80);// 500 es tanto el ancho del canvas como del fondo ("tile.png") y 80 es el ancho del la imagen vaca ("vaca.png"), el resultado de esta mimagen es el MAXimo_NUMero_animales que caben verticalmente u horizontalmente.
-  var num_max_animales_canvas = (0,36);// como el canvas es cuadrado, el mámimo numero de vacas cerdos o pollo en el tableron son 36 (esto es 6x6)
   if (objetoimagenOWN_fondo.cargaOk) {
     lienzo.drawImage(objetoimagenOWN_fondo.objetoimagenJS,0,0);}
   if (objetoimagenOWN_vaca.cargaOk) {
-    for (var i = 0; i < num_max_animales_canvas; i++) {
+    for (var i = 0; i < num_vacas; i++) {
       x = aleatorio(0,num_max_animales_XoY)*70;//6*70=420
       y = aleatorio(0,num_max_animales_XoY)*70;
       lienzo.drawImage(objetoimagenOWN_vaca.objetoimagenJS,x,y);}}
   if (objetoimagenOWN_cerdo.cargaOk) {
-    for (var i = 0; i < num_max_animales_canvas; i++) {
+    for (var i = 0; i < num_cerdos; i++) {
       x = aleatorio(0,num_max_animales_XoY)*70;//6*70=420
       y = aleatorio(0,num_max_animales_XoY)*70;
     lienzo.drawImage(objetoimagenOWN_cerdo.objetoimagenJS,x,y);}}
   if (objetoimagenOWN_pollo.cargaOk) {
-    for (var i = 0; i < num_max_animales_canvas; i++) {
+    for (var i = 0; i < num_pollos; i++) {
       x = aleatorio(0,num_max_animales_XoY)*70;//6*70=420
       y = aleatorio(0,num_max_animales_XoY)*70;
     lienzo.drawImage(objetoimagenOWN_pollo.objetoimagenJS,x,y);}}
