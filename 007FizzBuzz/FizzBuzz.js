@@ -1,11 +1,12 @@
 for (var i = 1; i <= 100; i++) {
-  if (i%3==0) {
-    document.write(i + "Fizz <br/>");
+  if (i%3 == 0) {
+    document.write("Fizz");
   }
-  else if (i%5 == 0) {
-    document.write(i + "Buzz <br/>");
+  if (i%5 == 0) {
+    document.write("Buzz");
   }
-  else {
-    document.write(i + "<br/>")
+  if (i%3 != 0 && i%5 != 0) {
+    document.write(i);
   }
+  document.write ("<br/>");
 }
