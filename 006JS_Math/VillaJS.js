@@ -61,9 +61,9 @@ var porcentaje_vacas = Math.round(xvacas/aux_porcentaje*100);
 var porcentaje_cerdos = Math.round(xcerdos/aux_porcentaje*100);
 var porcentaje_pollos = Math.round(xpollos/aux_porcentaje*100);
 
-var num_vacas = Math.round(porcentaje_vacas*36/100);
-var num_cerdos = Math.round(porcentaje_cerdos*36/100);
-var num_pollos = Math.round(porcentaje_pollos*36/100);
+var num_vacas = Math.round(porcentaje_vacas*num_max_animales_canvas/100);
+var num_cerdos = Math.round(porcentaje_cerdos*num_max_animales_canvas/100);
+var num_pollos = Math.round(porcentaje_pollos*num_max_animales_canvas/100);
 
 function mostrarVilla() {
   if (objetoimagenOWN_fondo.cargaOk) {
