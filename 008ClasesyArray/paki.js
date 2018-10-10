@@ -1,12 +1,12 @@
 class Pakiman
 {
-  constructor()
+  constructor(n,t,v,a)
   {
     // NOTE: propiedades
-    this.nombre = "vaca";
-    this.tipo = "tierra"
-    this.vida = 70;
-    this.ataque = 7;
+    this.nombre = n;
+    this.tipo = t;
+    this.vida = v;
+    this.ataque = a;
   }
   // NOTE: funciones
   hablar()
@@ -18,3 +18,6 @@ class Pakiman
 // NOTE: invocar PROPIEDAD "vaquera.ataque"
 // NOTE: invocar FUNCION "vaquera.hablar()"
 var vaquera = new Pakiman();
+
+// NOTE: cambiar los valores de las PROPIEDADES por PARAMETROS del constructor
+var chancho = new Pakiman("cerdo",2,3,4);
