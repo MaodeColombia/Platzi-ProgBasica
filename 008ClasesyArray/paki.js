@@ -19,7 +19,8 @@ class Pakiman
 var vaquera = new Pakiman();
 // NOTE: invocar PROPIEDAD "vaquera.nombre" para asignarle el valor que no se le asignó cuando se creó; como se observa en el constructor se requiere de cuatro PARAMETROS para definir el objeto, solo se va a definir "nombre", los demas van a quedar como indefinidos
 vaquera.nombre="vaca";
-// NOTE: invocar FUNCION "vaquera.hablar()"
+// NOTE: invocar FUNCION "vaquera.hablar()"; FUNCION que usa la PROPIEDAD que se acaba de definir
+vaquera.hablar();
 
 // NOTE: cambiar los valores de las PROPIEDADES por PARAMETROS del constructor
 var chancho = new Pakiman("cerdo",2,3,4);
