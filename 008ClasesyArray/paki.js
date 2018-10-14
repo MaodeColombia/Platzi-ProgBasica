@@ -21,9 +21,8 @@ var vaquera = new Pakiman();
 vaquera.nombre="vaca";
 // NOTE: invocar FUNCION "vaquera.hablar()"; FUNCION que usa la PROPIEDAD que se acaba de definir
 vaquera.hablar();
-
-// NOTE: cambiar los valores de las PROPIEDADES por PARAMETROS del constructor
-var chancho = new Pakiman("cerdo",2,3,4);
+// NOTE: Definición de los valores de las PROPIEDADES por PARAMETROS del constructor
+var chancho = new Pakiman("cerdo","tierra",80,17);
 
 
 // NOTE: creacion de vector vacio
