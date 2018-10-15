@@ -1,3 +1,10 @@
+// NOTE: visto lo de vectores se usara para crear el diccionario (estructura de datos de tipo diccionario)
+var imagenes = [];
+imagenes["vaquera"] = "vaca.png";
+imagenes["chancho"] = "cerdo.png";
+imagenes["gallo"] = "pollo.png";
+console.log(imagenes);
+
 class Pakiman
 {
   constructor(n,t,v,a)
@@ -26,6 +33,8 @@ vaquera.ataque = 27;
 vaquera.hablar();
 // NOTE: Definición de los valores de las PROPIEDADES por PARAMETROS del constructor
 var chancho = new Pakiman("cerdo","tierra",80,17);
+var gallo = new Pakiman("pollo","aire",7,100);
+console.log(vaquera,chancho,gallo);
 
 
 // NOTE: creacion de vector vacio
