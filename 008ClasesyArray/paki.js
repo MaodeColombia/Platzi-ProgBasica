@@ -21,7 +21,7 @@ var vaquera = new Pakiman();
 vaquera.nombre = "vaca";
 vaquera.tipo = "tierra";
 vaquera.vida = 100;
-vaquera.ataque = 7;
+vaquera.ataque = 27;
 // NOTE: invocar FUNCION "vaquera.hablar()"; FUNCION que usa la PROPIEDAD que se acaba de definir
 vaquera.hablar();
 // NOTE: Definición de los valores de las PROPIEDADES por PARAMETROS del constructor
@@ -36,7 +36,12 @@ vector[1] = "Mao";
 vector[2] = 3.141592654;
 // NOTE: agrega la informacion en la posicion final del vector
 vector.push("otra");
+// NOTE: si invoco el vector por su nombre "vector" mostraria todo su contenido
+console.log(vector);
+
 // NOTE: Array asociativo; es donde las posiciones están definida por un string
 // NOTE: ojo el mismo vector "vector" se asigna
 // NOTE: esto es lo que se llama un diccionario (estructura de datos de tipo diccionario)
 vector["Apellido"] = "Martín"
+// NOTE: a diferencia del anterior console.log(); dondde con solo invocar el vector los valores se muestran, los valores que fueron ubicados destro de posiciones definidas con string NO se muestran
+console.log(vector);
