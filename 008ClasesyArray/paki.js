@@ -5,6 +5,14 @@ imagenes["chancho"] = "cerdo.png";
 imagenes["gallo"] = "pollo.png";
 console.log(imagenes);
 
+// NOTE: el anterior bloque  es equivalente a
+var imagenes_Tipo_Objeto =
+{
+  vaquera: "vaca.png",
+  chancho: "cerdo.png",
+  gallo: "pollo.png"
+}
+
 class Pakiman
 {
   constructor(n,t,v,a)
