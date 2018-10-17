@@ -1,9 +1,9 @@
 // NOTE: visto lo de vectores se usara para crear el diccionario (estructura de datos de tipo diccionario)
-var imagenes = [];
-imagenes["vaquera"] = "vaca.png";
-imagenes["chancho"] = "cerdo.png";
-imagenes["gallo"] = "pollo.png";
-console.log(imagenes);
+var imagenes_tipo_vectorAsociativo = [];
+imagenes_tipo_vectorAsociativo["vaca"] = "vaca.png";
+imagenes_tipo_vectorAsociativo["cerdo"] = "cerdo.png";
+imagenes_tipo_vectorAsociativo["pollo"] = "pollo.png";
+console.log(imagenes_tipo_vectorAsociativo);
 
 // NOTE: el anterior bloque  es equivalente a
 var imagenes_Tipo_Objeto =
@@ -12,6 +12,7 @@ var imagenes_Tipo_Objeto =
   chancho: "cerdo.png",
   gallo: "pollo.png"
 }
+console.log(imagenes_Tipo_Objeto);
 
 class Pakiman
 {
@@ -22,21 +23,28 @@ class Pakiman
     this.tipo = t;
     this.vida = v;
     this.ataque = a;
+    this.imagen = new Image();
+    this.imagen.src = imagenes_tipo_vectorAsociativo[this.nombre];
   }
   // NOTE: funciones
   hablar()
   {
     alert(this.nombre);
   }
+  mostrar()
+  {
+
+  }
 }
 
 // NOTE: crear el objeto "vaquera" (es una instancia de la clase "Pakiman")
-var vaquera = new Pakiman();
+var vaquera = new Pakiman("vaca","tierra",100,27);
 // NOTE: invocar PROPIEDAD "vaquera.nombre" para asignarle el valor que no se le asignó cuando se creó; como se observa en el constructor se requiere de cuatro PARAMETROS para definir el objeto, solo se va a definir "nombre", los demas van a quedar como indefinidos
-vaquera.nombre = "vaca";
-vaquera.tipo = "tierra";
-vaquera.vida = 100;
-vaquera.ataque = 27;
+// siguiente 4 renglones pasana comentarios para solucionar el problema de this.imagen.src de vaca (ver la verisonanterior)
+//vaquera.nombre = "vaca";
+//vaquera.tipo = "tierra";
+//vaquera.vida = 100;
+//vaquera.ataque = 27;
 // NOTE: invocar FUNCION "vaquera.hablar()"; FUNCION que usa la PROPIEDAD que se acaba de definir
 vaquera.hablar();
 // NOTE: Definición de los valores de las PROPIEDADES por PARAMETROS del constructor
