@@ -51,3 +51,50 @@ vector["Apellido"] = "Martín"
 vaquera.mostrar();
 chancho.mostrar();
 gallo.mostrar();
+
+// NOTE: la colección de objetos dentro de un vector
+var paki_coleccion = [];
+paki_coleccion.push(vaquera);
+paki_coleccion.push(chancho);
+paki_coleccion.push(gallo);
+// NOTE: dentro de JS hay un ciclo especial FOR, la versión for-in y la versión for-of que están diseñados solo iterar por un objeto y mostrar
+// - el indice de la iteraciones "versión for-in"
+// - o el contenido de un indice "versión for-of"
+// NOTE: la versión for-in
+//for (var variable in object) {
+//  if (object.hasOwnProperty(variable)) {
+//  }
+//}
+// NOTE: funciona por cantidad de objetos que exista en el VECTOR; (si hay 1 o X no tengo que saber la cantidad)
+// NOTE: hace tantas iteraciones como objetos haya en el vector
+// NOTE: esta funcion es como contar, me muestra el indice.
+for (var temporal in paki_coleccion) {
+  console.log(temporal);
+}
+// NOTE: el ciclo anterior fue para vectores (con OBJETOS), ahora el ciclo ejecutado sobre OBJETOS hace tantas iteraciones como PROPIEDADES tenga
+for (temporal in paki_coleccion[0]) {
+  console.log(temporal);
+}
+// NOTE: PROPIEDADES que han podido ser OBJETOS (imagen es un OBJETO de tipo "new Image()")
+for (temporal in paki_coleccion[0].imagen) {
+  console.log(temporal);
+}
+// NOTE: el otro ciclo espeial FOR, la versión for-of
+//for (variable of iterable) {
+//}
+// NOTE: esta version itera por cada una de los componente (indices) y lo que retorna es el contenido en el indice
+for (var temporal of paki_coleccion) {
+  console.log(temporal);
+}
+
+
+// NOTE: el uso de las versiones for-of y for-in para vestores asociativos
+// for-in devuelve en nombre del indice
+for (temporal in imagenes_tipo_vectorAsociativo) {
+  console.log(temporal);
+}
+//... y el forof no devuelve "nada" (a menos que se haga explcidamente la forma en como debe iterar, pero es tema avanzado), ni siquiera entra al ciclo.
+for (temporal of imagenes_tipo_vectorAsociativo) {
+  console.log("nada de nada retorné con el vector asociativo");
+  console.log(temporal);
+}
