@@ -38,7 +38,7 @@ class Pakiman
       document.write ("<strong>" + this.nombre + "</strong><br/>");
       document.write ("Tipo: " + this.tipo + "<br/>");
       document.write ("Vida: " + this.vida + "<br/>");
-      document.write ("Ataque: " + this.ataque + "<br/>");
+      document.write ("Ataque: " + this.ataque + "<hr/><br/> ");
     document.write("</p>");
   }
 }
